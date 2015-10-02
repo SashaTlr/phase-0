@@ -35,3 +35,21 @@ Combining the exercises along with research online helped me successfully use al
 *help: help will pull out the section of the manual pertaining to whichever function has been requested
 
 #1.4 Forking and Cloning
+
+I am going to assume that the new person already has GitHub and git set up and installed.
+
+We are going to use GitHub to create a new repo, and then clone it into our local directory. This means that GitHub will remotely host our repository, and once we clone it into our local directory, we can push and merge any modifications into the remote repository so that it will be accessible to others.
+
+Create a new repo: First, sign into your GitHub profile (github.com) and click the '+' symbol ('Create New') in the top right of the page. From there, choose 'New Repository'. Select a name for this repository and put it into the Repository Name field. Select 'Public' to keep this as a public repo, and then choose "MIT License' for the "add a license" field. You have now created a new repo!
+
+To fork this repo (or an existing repository), navigate to the repository, select 'Fork' in the top right of the GitHub GUI, and then select the repository that you would like to fork the repo to.
+
+Once you have forked this repository and want to clone it to your local directory, or if you want to clone the repo that you've created, navigate to the repository that you'd like to clone through your GitHub GUI, and then copy to clipboard the URL in the right bar, where it says 'clone URL'.
+
+Go to your Terminal, and type 'git clone URL'. This will clone the repository to your local directory. You will now see copies of these repositories in your local drive.
+
+
+
+I already had my git and GitHub accounts set up, however, I wasn't clear on the difference between the two, and wasn't clear on the fork, commit, and push/pull processes. I misunderstood 'pull' to behave in the way the fork and clone functions work, as in I would "pull" in a branch locally to work on. So this exercise significantly clarified the functionalities of GitHub and git, when to use the git command line vs GitHub GUI, and how to use the different functions in the command line.
+
+I also better understand the difference between creating a branch versus forking a repository. If you want to maintain independence from the original repo, forking will create a copy of the repo for you, and you can store your commits in here as opposed to committing them to a branch that is linked to the master code. Branching makes sense when it's a team working on different features of a piece of code, but if you are experimenting or playing with the code on your own, and if your main intention isn't to contribute to the master code or merge to the master code, forking usually makes more sense.
