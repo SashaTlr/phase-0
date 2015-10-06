@@ -1,1 +1,1 @@
-!["Sasha's site map using draw.io"](imgs/site-map.png)
+![Alt text]("imgs/site-map.png")
