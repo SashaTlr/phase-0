@@ -2,7 +2,7 @@
 
 ## This section introduced the concept of sitemaps and content planning
 
-## draw.io used to create site map png file
+(note to self: draw.io used to create site map png file)
 
 ![My sitemap for Section 2.3](imgs/site-map.png)
 
