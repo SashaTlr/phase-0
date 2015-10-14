@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to my blog!</title>
+    <meta charset="UTF-8">
+  </head>
+
+  <body>
+    <nav>
+        <a href="http://sashatlr.github.io/index.html">Return to blog index</a>
+    </nav>
+
+    <header>
+      <a href="http://sashatlr.github.io/index.html"><img src="../imgs/Logo.png" alt="Logo">--><h1>Go Home!</h1></a>
+    </header>
+
+    <article>
+
+      <h2>Learning about version control, git, and GitHub</h2>
+      <h3>October 3, 2015</h3>
+
+      <p>
+        When I worked in banking, I used Excel and Microsoft Word often. I was terrible about saving my documents, and would often make modifications to my work without making backup copies. I would have to dig through our snapshots, and hope that a snapshot was taken just before I added in my changes, but often, it hadn't.
+
+        I very much needed to use version control so that I could track my changes, have multiple versions of my work, test how changes were impacting our results, and to experiment with my work without damaging the original templates.
+
+        As a banker, I didn't appreciate the version control systems that our operations team tried to implement, as it was incredibly clunky, and was very time consuming to implement. Not only do similar issues exist in banking to when you work independently on code, but software is typically more of a collaborative effort, so you also need to be able to track how others are using the code. Version control allows you to organize collaborative and individual work, gives you the ability to experiment, revert back to older code, work simulataneously without interfering with each other's work, and gives clarity as to how a piece of code evolved and why.
+      </p>
+      <p>
+        Git is a great system for version control. It is a very light (and free!) piece of softwareto use to tracks changes to code. Git has useful commands that can be used in the terminal (command line) to allow you to conveniently move modifications to the master files without overwriting the master code before it has been tested and approved. While git can be used for version control, it does rely on files to be stored locally. GitHub acts as a hosting service to allow teams to access these coding files remotely. GitHub also forces you to push your changes from Git to GitHub, and will not automatically override the master files with your changes. Once you have pushed your modifications to GitHub, a pull request needs to be created to review the changes, and only then can the files be merged.This allows for the opportunity to review any changes before overriding the source code, which reduces errors and bugs being introduced to the code. Of course, if there are problems, version control means that you can revert back to a previous iteration of the code.
+      </p>
+
+    </article>
+
+    <footer>
+      <p> Keep in touch! </p>
+      <a href="mailto:sashatailor@gmail.com"><img src="../imgs/Mail-Icon.png" alt="Email"></a>
+      <a href="https://github.com/SashaTlr"><img src="../imgs/GitHub-Mark-32px.png" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/in/sashatailor"><img src="../imgs/1444424794_linkedin.png" alt="LinkedIn"></a>
+
+      <!-- can add other social media icons later -->
+
+    </footer>
+
+  </body>
+
+</html>
+
+<!--
+What HTML5 tags have you used in this challenge and continue to return to often? Why?
+I use <nav>, <section>, <aside>, <article>, <footer>, and <header> a lot. I find these tags make organizing my page a lot easier than using divs, as it reminds me of the hierarchy structure used in Microsoft Work to create the Table of Contents. I basically visualize my webpage as an outline or ToC/index, and then assign tags based on how that would look.
+I find the div tag to be confusing though. I see div is useful in applying a class from the CSS stylesheet to a chunk of text in the HTML code, but I don't see the value of the div tag when it comes to actually writing HTML.
+
+How do elements get laid out on a page? What is the order the browser uses to display elements?
+The browser works from the outside in. It will first create a large container for the body, and then lay out each element, going from least to most specific. It cascades, and I think of this as layering, where the more specific an element is, the closer to the front that layer will be.
+In creating the element stylesheets, it is good practice to build onto the existing styling instead of undoing existing styles with more specific classes/IDs. It is easier to organize and read, and it reduces redundancy in the stylesheet.
+
+What did you learn about Sublime in this challenge? Do you think you'll create more handy snippets at a later date? What about research some shortcuts that already exist?
+I learned some shortcuts from watching the videos, such as the command+D to edit multiple lines simultaneously. I also learned how to create snippets, which will be useful for things like creating a new blog post. I won't have to copy and paste the blog-template file into a new post each time.
+-->
