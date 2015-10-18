@@ -1,4 +1,5 @@
-/*What is important to know when linking an external file (like a stylesheet) to an HTML file?
+/*
+What is important to know when linking an external file (like a stylesheet) to an HTML file?
 The most important thing to know when linking an external file is where to find it. Using the relative path name, i.e. where the file sits in relation to the html file that you're working out of, is the most useful way to reference an external file so that if you change root directories, the links between the two files won't break. It's also important to know the type of file that is being linked so that you know what link type is encessary.
 
 What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
