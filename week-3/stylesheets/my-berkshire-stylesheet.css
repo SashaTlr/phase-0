@@ -1,3 +1,17 @@
+/*What is important to know when linking an external file (like a stylesheet) to an HTML file?
+The most important thing to know when linking an external file is where to find it. Using the relative path name, i.e. where the file sits in relation to the html file that you're working out of, is the most useful way to reference an external file so that if you change root directories, the links between the two files won't break. It's also important to know the type of file that is being linked so that you know what link type is encessary.
+
+What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
+To adjust for the line spacing between content, we created classes that wiped out or set margins to fixed amounts. We tried to use classes as much as possible, and only used selectors where it made sense. In order to create the horizontal line break, we used a top border in css instead of using the <hr> tag in our html.
+
+What CSS did you use to modify the element style (like size, color, etc.)
+We used font size, height, color and text-align to modify elements by selector. We also used column-count and gap, margin, padding, and borders.
+
+Did you modify the HTML to include classes or ids? If so, which did you chose and why? If you didn't, how would you know which one to add to your HTML?
+We did use a lot of classes to modify our formatting. We made the classes consistent among different parts of the site - e.g. to shrink the link descriptors that contained Date and more information, we named the class "Link-descriptors". Classes that simply changed font size were f-xxs, etc. We were very explicit in naming the classes so that when we modified our HTML, we knew which class to use and what it meant.
+
+When you compared your site to the actual code base, which do you think had cleaner code that followed best practices and why? Our code made better use of semantic HTML and a separate style sheet. I think this makes the code easier to interpret and follows best practices. It also makes it easier to modify the formatting in the future, since the style code isn't embedded in the same html code sheet. */
+
 html {
   color: #000080;
   background-color: #ffffff;
