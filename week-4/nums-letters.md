@@ -22,4 +22,9 @@ irb(main):005:0> 10 * 365 * 24 * 60
 => 5256000
 ```
 
-Release 3: Letters
+Release 5: Exercises
+
+[Assignment 4.2.1: Defining Variables](https://github.com/SashaTlr/phase-0/blob/master/week-4/basic-math.rb)
+[Assignment 4.2.2: Simple String Methods](https://github.com/SashaTlr/phase-0/blob/master/week-4/simple-string.rb)
+[Assignment 4.2.3: Local Variables & Arithmetics](https://github.com/SashaTlr/phase-0/blob/master/week-4/defining-variables.rb)
+
