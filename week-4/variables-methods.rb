@@ -25,6 +25,14 @@ p new_number.to_s + ' is a bigger and better number!'
 
 =begin
 
+Release 4:
+
+https://github.com/SashaTlr/phase-0/blob/master/week-4/address/my_solution.rb
+
+https://github.com/SashaTlr/phase-0/blob/master/week-4/math/my_solution.rb
+
+
+Reflection:
 How do you define a local variable?
   A local variable whose scope is limited to its parent' function. Calling the variable outside of the function will not work unless the variable has also been defined outside of the function.
 
