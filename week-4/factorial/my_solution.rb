@@ -14,5 +14,7 @@
 def factorial(number)
   x = 1
   number.times { |i| x = (i+1) * x}
+
+
   return x
 end
