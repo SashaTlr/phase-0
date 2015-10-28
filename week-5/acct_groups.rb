@@ -26,25 +26,24 @@ number_names = list_of_names.length
 
   # if list of names is less than 5, you have one cohort
   remainder_five = number_names % 5
+  remainder_four = number_names % 4
+
   if number_names <= 5 || remainder_five >= 4 || remainder_five == 0
     return cohort_list = list_of_names.each_slice(5).to_a
+  elsif remainder_four >= 3 || remainder_four == 0
+    return cohort_list = list_of_names.each_slice(4).to_a
   elsif (number_names / 5 - 1) >= (4 - remainder_five)
     cohort_list = list_of_names.each_slice(5).to_a #split into groups of 5
     loop_num = (4 - remainder_five) #get number of loops
     loop_num.times {|i| cohort_list[-1] << cohort_list[i].pop} #pop number of loops
     return  cohort_list
-  else
-    remainder_four = number_names % 4
-    if remainder_four >= 3 || remainder_four == 0
-      return cohort_list = list_of_names.each_slice(4).to_a
-    elsif (number_names / 4 - 1) >= (3 - remainder_four)
+  elsif (number_names / 4 - 1) >= (3 - remainder_four)
       cohort_list = list_of_names.each_slice(5).to_a
       loop_num = (3 - remainder_four)
       loop_num.times {|i| cohort_list[-1] << cohort_list[i].pop}
       return  cohort_list
-    else
+  else
       return cohort_list = list_of_names.each_slice(3).to_a
-    end
   end
 end
 
