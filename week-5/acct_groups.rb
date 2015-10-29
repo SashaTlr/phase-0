@@ -2,6 +2,61 @@
 # Input: an array of strings
 # Output: 2D array of strings
 
+list_of_names = ["Syema Ailia","Alan Alcesto","Daniel Andersen","James Artz","Darius Atmar","Brian Bensch","Nicola Beuscher","Kris Bies","Logan Bresnahan","William Brinkert","Scott Chou","Bernice Anne W Chua","Abraham Clark","Jon Clayton","Kevin Corso","Jacob Crofts","Amaar Fazlani","Solomon Fernandez","Edward Gemson","Jamar Gibbs","Chris Gomes","Will Granger","Christopher M. Guard","Ryan Ho","Igor Kazimirov","Walter Kerr","Karla King","Nruthya Lakshminarasimhan pending","Becky Lehmann","Malia Lehrer","Carolina Medellin","Timothy Meixell","Chris Miklius","Joshua Monzon","Shea Munion","Bryan Munroe","Trevor Newcomb","Aleksandra Nowak","Fatma Ocal","Van Phan","Luis Fernando Plaz","Natalie Polen","Alicia Quezada","Jessie Richardson","Nimi Samocha","Zach Schatz","Tal Schwartz","Pratik Shah","Josh Shin","Shawn Spears","Sasha Tailor","Nil Thacker","Natasha Thapliyal","Sabrina Unrein","Brian Wagner","Clinton Weber","Gregory Wehmeier","Michael Whelpley","Alexander Williams","Peter N Wood","Ryan Zell"]
+
+
+
+#Refactoring Pseudocode
+# Major change: Only want groups of 3 if absolutely necessary
+#    IF number of names divided by 5 is perfectly divisible
+#       split array into groups of 5 names
+#    ELSEIF num of names divided by 4 is perfectly divisible
+#       split array into groups of 4 names
+#    ELSIF num of names > 12
+#      number of groups is num of names + 1, this will store sequence of group sizes
+#      number of groups of 4 names is (5 - remainder of num of names divided by 5)
+#      number of groups of 5s is number of groups - number of groups of 4
+#        Split array into 2 chunks: names in groups of 4s and names in groups of 5s
+#        Split 2 arrays into groups of 4 and 5 and concatenate
+#    ELSIF
+#      num names is 6 then split into groups of 3
+#    ELSIF
+#      num_names is 7 or 11 split into groups of 4
+#    elsif
+#      num names is 9 then split into groups of 5
+#    end
+#  end
+
+def accountability_groups(list_of_names)
+  list_of_names.shuffle! if list_of_names.length > 1
+  num_names = list_of_names.length
+  rmdr_by_4 = num_names % 4
+  rmdr_by_5 = num_names % 5
+  div_by_5 = num_names / 5
+
+  if rmdr_by_5 == 0 || num_names < 5 || num_names == 9 #note special case
+    return list_of_names.each_slice(5).to_a
+  elsif rmdr_by_4 == 0 || num_names == 7 || num_names == 11 #note special case
+    return list_of_names.each_slice(4).to_a
+  elsif num_names == 6
+    return list_of_names.each_slice(3).to_a
+  elsif num_names > 12
+    grouping_fours = 5 - rmdr_by_5 #number of fours 13 = 5 - 3 = 2
+    grouping_fives = div_by_5 + 1 - grouping_fours # 3 - 2 = 1
+    #split into two arrays
+    return list_of_names[0.. (4 * grouping_fours -1)].each_slice(4).to_a + list_of_names[(4 * grouping_fours)..num_names-1].each_slice(5).to_a
+  end
+end
+
+
+p accountability_groups(list_of_names)
+p accountability_groups(list_of_names[1..10])
+p accountability_groups(list_of_names[1..4])
+p accountability_groups(list_of_names[1..6])
+p accountability_groups(list_of_names[1..2])
+p accountability_groups(list_of_names[3..40])
+
+######ORIGINAL SOLUTION BELOW
 #Count the number of people in the cohort and divide by 5 to get number of groups
   #IF number of people < 5, return one cohort
   #ELSIF size of last cohort is 4 or 5 then return groups
@@ -16,7 +71,8 @@
         #run again with groups of 3
     #end
   #end
-
+=begin
+Solution 1 (before refactoring)
 def accountability_groups(list_of_names)
 
 #randomize the group
@@ -46,7 +102,4 @@ number_names = list_of_names.length
       return cohort_list = list_of_names.each_slice(3).to_a
   end
 end
-
-list_of_names = ["Syema Ailia","Alan Alcesto","Daniel Andersen","James Artz","Darius Atmar","Brian Bensch","Nicola Beuscher","Kris Bies","Logan Bresnahan","William Brinkert","Scott Chou","Bernice Anne W Chua","Abraham Clark","Jon Clayton","Kevin Corso","Jacob Crofts","Amaar Fazlani","Solomon Fernandez","Edward Gemson","Jamar Gibbs","Chris Gomes","Will Granger","Christopher M. Guard","Ryan Ho","Igor Kazimirov","Walter Kerr","Karla King","Nruthya Lakshminarasimhan pending","Becky Lehmann","Malia Lehrer","Carolina Medellin","Timothy Meixell","Chris Miklius","Joshua Monzon","Shea Munion","Bryan Munroe","Trevor Newcomb","Aleksandra Nowak","Fatma Ocal","Van Phan","Luis Fernando Plaz","Natalie Polen","Alicia Quezada","Jessie Richardson","Nimi Samocha","Zach Schatz","Tal Schwartz","Pratik Shah","Josh Shin","Shawn Spears","Sasha Tailor","Nil Thacker","Natasha Thapliyal","Sabrina Unrein","Brian Wagner","Clinton Weber","Gregory Wehmeier","Michael Whelpley","Alexander Williams","Peter N Wood","Ryan Zell"]
-
-p x = accountability_groups(list_of_names)
+=end
