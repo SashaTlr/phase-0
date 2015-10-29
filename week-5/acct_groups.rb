@@ -6,47 +6,45 @@ list_of_names = ["Syema Ailia","Alan Alcesto","Daniel Andersen","James Artz","Da
 
 
 
-#Refactoring Pseudocode
+#Refactoring Pseudocode (original code at end)
 #input: array of strings
 #output: 2D array of strings
 # Major change: Only want groups of 3 if absolutely necessary
 #    IF number of names divided by 5 is perfectly divisible
 #       split array into groups of 5 names
+#    ELSIF
+#      num names is 9 then split into groups of 5
 #    ELSEIF num of names divided by 4 is perfectly divisible
 #       split array into groups of 4 names
-#    ELSIF num of names > 12
-#      number of groups is num of names + 1, this will store sequence of group sizes
-#      number of groups of 4 names is (5 - remainder of num of names divided by 5)
-#      number of groups of 5s is number of groups - number of groups of 4
-#        Split array into 2 chunks: names in groups of 4s and names in groups of 5s
-#        Split 2 arrays into groups of 4 and 5 and concatenate
-#    ELSIF
-#      num names is 6 then split into groups of 3
 #    ELSIF
 #      num_names is 7 or 11 split into groups of 4
-#    elsif
-#      num names is 9 then split into groups of 5
+#    ELSIF
+#      num names is 6 then split into groups of 3
+#    ELSIF num of names > 12
+#      calculate total number of groups, found by list size/5 + 1 (eg 26 will have 26/5 + 1 = 6 total groups)
+#      number of groups of 4 names is (5 - remainder of num of names divided by 5). We determine this by looking at the smallest number divisible by 5 after the list size we are working with. We then need to minus a 1 from each 5 to count back to our list size. E.g. 26 can be broken down into 5 + 5 + 5 + 5 + 5 + 5 -1 = 5 + 5 + 5 + 5 + 5 + 4.
+#      number of groups of 5s is number of total groups - number of groups of 4
+#        Split array into 2 chunks: names in groups of 4s and names in groups of 5s
+#        Split 2 arrays into groups of 4 and 5 and concatenate
 #    end
 #  end
 
 def accountability_groups(list_of_names)
-  list_of_names.shuffle! if list_of_names.length > 1
   num_names = list_of_names.length
+  list_of_names.shuffle! if num_names > 1
   rmdr_by_4 = num_names % 4
   rmdr_by_5 = num_names % 5
   div_by_5 = num_names / 5
 
-  if rmdr_by_5 == 0 || num_names < 5 || num_names == 9 #note special case
+  if rmdr_by_5 == 0 || num_names < 5 || num_names == 9 #special case
     return list_of_names.each_slice(5).to_a
-  elsif rmdr_by_4 == 0 || num_names == 7 || num_names == 11 #note special case
+  elsif rmdr_by_4 == 0 || num_names == 7 || num_names == 11 #special case
     return list_of_names.each_slice(4).to_a
   elsif num_names == 6
     return list_of_names.each_slice(3).to_a
   elsif num_names > 12
-    grouping_fours = 5 - rmdr_by_5 #number of fours 13 = 5 - 3 = 2
-    grouping_fives = div_by_5 + 1 - grouping_fours # 3 - 2 = 1
     #split into two arrays
-    return list_of_names[0.. (4 * grouping_fours -1)].each_slice(4).to_a + list_of_names[(4 * grouping_fours)..num_names-1].each_slice(5).to_a
+    return list_of_names[0.. (4 * (5 - rmdr_by_5)-1)].each_slice(4).to_a + list_of_names[(4 * (5 - rmdr_by_5))..num_names-1].each_slice(5).to_a
   end
 end
 
@@ -54,7 +52,7 @@ puts 'Test 1'
 accountability_groups(list_of_names).each{|i| p i}
 puts
 puts 'Test 2'
-accountability_groups(list_of_names[1..10]).each{|i| p i}
+accountability_groups(list_of_names[1..9]).each{|i| p i}
 puts
 puts 'Test 3'
 accountability_groups(list_of_names[1..4]).each{|i| p i}
