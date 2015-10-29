@@ -7,6 +7,8 @@ list_of_names = ["Syema Ailia","Alan Alcesto","Daniel Andersen","James Artz","Da
 
 
 #Refactoring Pseudocode
+#input: array of strings
+#output: 2D array of strings
 # Major change: Only want groups of 3 if absolutely necessary
 #    IF number of names divided by 5 is perfectly divisible
 #       split array into groups of 5 names
@@ -48,15 +50,27 @@ def accountability_groups(list_of_names)
   end
 end
 
-
-p accountability_groups(list_of_names)
-p accountability_groups(list_of_names[1..10])
-p accountability_groups(list_of_names[1..4])
-p accountability_groups(list_of_names[1..6])
-p accountability_groups(list_of_names[1..2])
-p accountability_groups(list_of_names[3..40])
+puts 'Test 1'
+accountability_groups(list_of_names).each{|i| p i}
+puts
+puts 'Test 2'
+accountability_groups(list_of_names[1..10]).each{|i| p i}
+puts
+puts 'Test 3'
+accountability_groups(list_of_names[1..4]).each{|i| p i}
+puts
+puts 'Test 4'
+accountability_groups(list_of_names[1..6]).each{|i| p i}
+puts
+puts 'Test 5'
+accountability_groups(list_of_names[1..2]).each{|i| p i}
+puts
+puts 'Test 6'
+accountability_groups(list_of_names[3..40]).each{|i| p i}
 
 ######ORIGINAL SOLUTION BELOW
+#input: array of strings
+#output: 2D array of strings
 #Count the number of people in the cohort and divide by 5 to get number of groups
   #IF number of people < 5, return one cohort
   #ELSIF size of last cohort is 4 or 5 then return groups
