@@ -1,6 +1,10 @@
-# In this challenge, you will make your own method to automatically create accountability groups from a list of names. You'll want to make a list of the People in your cohort. Try to get everyone into an accountability group of 4 or 5. Be sure everyone is in a group of at least 3 -- It's no fun if someone is in a group by themself or with one other person.
-# Input: an array of strings
-# Output: nested array of array of strings
+# In this challenge, you will make your own method to automatically
+# create accountability groups from a list of names. You'll want to
+# make a list of the People in your cohort. Try to get everyone into
+# an accountability group of 4 or 5. Be sure everyone is in a group of
+# at least 3 -- It's no fun if someone is in a group by themself or
+# with one other person. Input: an array of strings Output: nested
+# array of array of strings
 
 list_of_names = ["Syema Ailia","Alan Alcesto","Daniel Andersen","James Artz","Darius Atmar","Brian Bensch","Nicola Beuscher","Kris Bies","Logan Bresnahan","William Brinkert","Scott Chou","Bernice Anne W Chua","Abraham Clark","Jon Clayton","Kevin Corso","Jacob Crofts","Amaar Fazlani","Solomon Fernandez","Edward Gemson","Jamar Gibbs","Chris Gomes","Will Granger","Christopher M. Guard","Ryan Ho","Igor Kazimirov","Walter Kerr","Karla King","Nruthya Lakshminarasimhan pending","Becky Lehmann","Malia Lehrer","Carolina Medellin","Timothy Meixell","Chris Miklius","Joshua Monzon","Shea Munion","Bryan Munroe","Trevor Newcomb","Aleksandra Nowak","Fatma Ocal","Van Phan","Luis Fernando Plaz","Natalie Polen","Alicia Quezada","Jessie Richardson","Nimi Samocha","Zach Schatz","Tal Schwartz","Pratik Shah","Josh Shin","Shawn Spears","Sasha Tailor","Nil Thacker","Natasha Thapliyal","Sabrina Unrein","Brian Wagner","Clinton Weber","Gregory Wehmeier","Michael Whelpley","Alexander Williams","Peter N Wood","Ryan Zell"]
 
@@ -9,7 +13,7 @@ list_of_names = ["Syema Ailia","Alan Alcesto","Daniel Andersen","James Artz","Da
 #Refactoring Pseudocode (original code at end)
 #input: array of strings
 #output: 2D array of strings
-# Major change: Only want groups of 3 if absolutely necessary
+# Major change: Only want groups of 3 if absolutely necessary, never less than 3
 #    IF number of names divided by 5 is perfectly divisible
 #       split array into groups of 5 names
 #    ELSIF
@@ -22,7 +26,7 @@ list_of_names = ["Syema Ailia","Alan Alcesto","Daniel Andersen","James Artz","Da
 #      num names is 6 then split into groups of 3
 #    ELSIF num of names > 12
 #      calculate total number of groups, found by list size/5 + 1 (eg 26 will have 26/5 + 1 = 6 total groups)
-#      number of groups of 4 names is (5 - remainder of num of names divided by 5). We determine this by looking at the smallest number divisible by 5 after the list size we are working with. We then need to minus a 1 from each 5 to count back to our list size. E.g. 26 can be broken down into 5 + 5 + 5 + 5 + 5 + 5 -1 = 5 + 5 + 5 + 5 + 5 + 4.
+#      number of groups of 4 names is (5 - remainder of num of names divided by 5). We determine this by looking at the smallest number divisible by 5 after the list size we are working with. We then need to minus a 1 from each 5 to count back to our list size. E.g. 26 can be broken down into 5 + 5 + 5 + 5 + 5 + 5 -4 = 5 + 5 + 4 + 4 + 4 + 4.
 #      number of groups of 5s is number of total groups - number of groups of 4
 #        Split array into 2 chunks: names in groups of 4s and names in groups of 5s
 #        Split 2 arrays into groups of 4 and 5 and concatenate
