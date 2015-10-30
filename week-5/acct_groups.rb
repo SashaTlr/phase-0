@@ -14,7 +14,8 @@ list_of_names = ["Syema Ailia","Alan Alcesto","Daniel Andersen","James Artz","Da
 #input: array of strings
 #output: hash with group name and members
 # Major change: Only want groups of 3 if absolutely necessary, never less than 3.
-# Groups can be composed of all 4s and 5s for lists of 12 and greater, need separate statements for lists of less than 12 students
+# Groups can be composed of all 4s and 5s for lists of 12 and greater, need separate statements for lists of less than 12 students.
+
 #    IF number of names divided by 5 is perfectly divisible
 #       split array into groups of 5 names
 #    ELSIF
@@ -28,12 +29,19 @@ list_of_names = ["Syema Ailia","Alan Alcesto","Daniel Andersen","James Artz","Da
 #    ELSIF
 #      num names is 6 then split into groups of 3
 #    ELSIF num of names > 12
-#      1) Calculate total number of groups, found by list size/5 + 1 (eg 26 will have 26/5 + 1 = 6 total groups)
-#      2 )Number of groups of 4 names out of the total number of groups will be 5 - remainder of the list size/5. We know this because if we set the total number of groups to all be made up of 5 students, we would be over our total list size, and would need to subtract a 1 from each of the groups enough times to scale back to our list size.
-#      3) Segment list size into two subset. One containing all of the names that will be split into groups of 4. Use the number of groups of 4 multiplied by 4 to get the size of this subset. The second subset is the rest of the list, and will make up our groups of 5.
-# Convert arrays to a hash and return the hash.
+#       Segment list size into two subset. One containing all of the names that will be split into groups of 4. The relationship between the remainder when dividing by 5 and the number groups of 4 is 5 - remainder of list size/5. Use this number multiplied by 4 to get the size of this subset that you need to segment to create groups of 4. The second subset is the rest of the list, and will make up the groups of 5.
+#
+#  Convert arrays to a hash and return the hash.
 #    end
 #  end
+
+
+# Explanation of relationship between remainder and # of groups of 4:
+# => For lists larger than 11 people, the list can be split into groups of all 5s and 4s. The total number of groups is the list size / 5 + 1. Call this number our total containers.
+#    Logic: If each container was a group of 5, we would overshoot the list size since none of the lists are perfectly divisible by 5. Since the remainder of the list size by 5 is always a remainder between 1 and 4, we take 1 off of each 5 to bring the total down. For numbers greater than 11, we will always have enough 5s to adjust down since we will always have at least 4 containers. So the number of times we reduce a container is 5 - the remainder when list size is divided by 5. This is equivalent to the number of groups of 4 that we need.
+# => Exception: for list sizes less than 11, this does not apply. E.g. for a list size of 11, we would have three containers, i.e. 5, 5, 5 but 15 overshoots 11 by 4. We don't have 4 containers so we can't reduce enough without forcing a group size less than 4.
+
+
 
 def accountability_groups(list_of_names)
   num_names = list_of_names.length
@@ -51,7 +59,6 @@ def accountability_groups(list_of_names)
   elsif num_names > 12
     group_array = list_of_names[0.. (4 * (5 - rmdr_by_5)-1)].each_slice(4).to_a + list_of_names[(4 * (5 - rmdr_by_5))..num_names-1].each_slice(5).to_a
   end
-
   return group_array.map.with_index {|x, i| ['Group ' + (i+1).to_s, x] }.to_h
 end
 
