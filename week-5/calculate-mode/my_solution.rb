@@ -26,21 +26,18 @@
 #return keys for max values as an array
 
 # 1. Initial Solution
-
+=begin
 def mode(my_array)
   data = Hash.new()
   my_array.each {|x| data[x] = my_array.count(x) }
   max_val = data.values.max
   return data.select{|keys,value| value == max_val}.keys
 end
-
+=end
 
 # 3. Refactored Solution
 def mode(my_array)
-  data = Hash.new()
-  my_array.uniq.each {|x| data[x] = my_array.count(x) }
-  max_val = data.values.max
-  return data.select{|keys,value| value == max_val}.keys
+  return my_array.group_by{|i| my_array.count(i)}.max[1].uniq
 end
 
 
@@ -54,3 +51,4 @@ end
   #We had some typos when using methods, which caused errors that we couldn't decipher easily. We also knew that we should use a hash, but had some issues figuring out how to return the keys for a specified value. We used irb to test the methods to make sure we were implementing them properly before using them.
 #What methods did you use to iterate through the content? Did you find any good ones when you were refactoring? Were they difficult to implement?
   #No new methods except for adding in the unique method to decrease the number of times we counted elements in the array. I guess count is a new method although like min, max, it's intuitive that there's a built in function to perform a count on an array.
+  #Update! I was learning group_by for my blog post and realized I could apply it to this problem. I've added it in but it's an update to the solution we worked on as a pair. It returns an array of two elements, the first being the maximum frequency and the second being the elements associated with the frequency.
