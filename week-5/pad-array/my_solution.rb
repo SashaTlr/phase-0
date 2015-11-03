@@ -2,7 +2,7 @@
 
 # I worked on this challenge with Joshua Shin
 
-# I spent [] hours on this challenge.
+# I spent 1 hour on this challenge.
 
 
 # Complete each step below according to the challenge directions and
@@ -83,7 +83,7 @@ end
 #Were you successful in breaking the problem down into small steps?
   #Yes...
 #Once you had written your pseudocode, were you able to easily translate it into code? What difficulties and successes did you have?
-  #Yes, was very easy to translate. The destructive method was not a problem, but we ran into issues with the non-descructive method because our new array was pointing to the original object instead of creating a clone. So when no changes were made to the array, it retained the original object id and failed.
+  #Yes, was easy to translate. The destructive method was not a problem, but we ran into issues with the non-descructive method because our new array was pointing to the original object instead of creating a clone. So when no changes were made to the array, it retained the original object id and failed.
 #Was your initial solution successful at passing the tests? If so, why do you think that is? If not, what were the errors you encountered and what did you do to resolve them?
   # Same as above, the method would fail whenever the object ids matched in our non-destructive method. We eventually googled how to create a copy of an object but give it a new object id, which is how we found the clone method in the ruby docs.
 #When you refactored, did you find any existing methods in Ruby to clean up your code?
