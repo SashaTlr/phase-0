@@ -124,3 +124,19 @@ new_game.check
 }
 
 #Reflection
+#How difficult was pseudocoding this challenge? What do you think of your pseudocoding style?
+#  This is going to sound trivial but pseudocoding is kind of difficult on a laptop. You want your code to follow your pseudocode, but the screen is so small that it's hard to follow along.
+#  I can't invest in a screen at the moment, but am looking forward to having multiple screens again at DBC.
+#  Pseudocoding is so useful in planning out the code, but I tend to miss some of the more subtle details in the algorithms, so I diverge from the pseudocode more than our tutorials have suggested that we should.
+#What are the benefits of using a class for this challenge?
+#  Classes are  useful as we don't have to keep passing variables through all of our methods. It makes for cleaner code and reduces humar error.
+#How can you access coordinates in a nested array?
+#  Coordinates are accessed similar to a single array, except there's a second index (or more) because a nested array has multiple levels that need to be accessed. When you access the first element of a nested array, you are accessing the first level of the array. By adding in another index, you are now entering the elements of the subarray or second level.
+#What methods did you use to access and modify the array?
+#  I used transpose to access the column and then search the rows of that column. This basically switched the "rows" and "columns" around to make it convenienet to access the original board by column first (i.e. first level). I used each to print out the array.
+#Give an example of a new method you learned while reviewing the Ruby docs. Based on what you see in the docs, what purpose does it serve, and how is it called?
+#  The new method that I used is transpose. It swaps around the row and column indices, or swaps the levels of the nested array. This was useful for the Bingo class because when you are searching for a number, the column is fixed and the rows need to be searched. This means that you are fixing the second level of the nested array and then searching the first level. By flipping it around, you search the row (or the first level of the nested array) first, and then search the elements of that array.
+#How did you determine what should be an instance variable versus a local variable?
+#  If the variable needs to be referenced in other methods, it's an instance variable. If it is only used in the one method, it can be a local variable.
+#What do you feel is most improved in your refactored solution?
+#    I created a global variable to convert colums into the appropriate Bingo letters. I was able to take out a method to convert the number into a column by creating this array and then pulling out the appropriate character by referencing the index of the first digit of the random number that was generated.
