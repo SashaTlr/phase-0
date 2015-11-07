@@ -109,9 +109,7 @@ startup_names.map!{|x| x.is_a?(Array) ?
 p startup_names
 
 #What are some general rules you can apply to nested arrays?
-  #If the level of the nest varies between each index, then a more
-  #specific solution has to be written to iterate through each level
-  #of the nested array.
+  #If the level of the nest varies between each index, then a more specific solution has to be written to iterate through each level of the nested array.
 #What are some ways you can iterate over nested arrays?
   #Map or map! can be used to iterate, and is useful when testing
   #for certain conditions. Each can also iterate, but it doesn't
