@@ -109,8 +109,18 @@ startup_names.map!{|x| x.is_a?(Array) ?
 p startup_names
 
 #What are some general rules you can apply to nested arrays?
-  #If the level of the nest varies between each index, then a more specific solution has to be written to iterate through each level of the nested array.
+  #If the level of the nest varies between each index, then a more
+  #specific solution has to be written to iterate through each level
+  #of the nested array.
 #What are some ways you can iterate over nested arrays?
-  #Map or map! can be used to iterate, and is useful when testing for certain conditions. Each can also iterate, but it doesn't create a new array or have a destructive method. For this exercise, map seems to be a better choice.
-#Did you find any good new methods to implement or did you re-use one you were already familiar with? What was it and why did you decide that was a good option?
-  #I tried select but map! worked better. The destructive version of select filtered out array elements that didn't meet our conditions, while map! retains the elements that fail and then modify the elements that pass.
+  #Map or map! can be used to iterate, and is useful when testing
+  #for certain conditions. Each can also iterate, but it doesn't
+  #create a new array or have a destructive method. For this
+  #exercise, map seems to be a better choice.
+#Did you find any good new methods to implement or did you re-use
+#one you were already familiar with? What was it and why did you
+#decide that was a good option?
+  #I tried select but map! worked better. The destructive version of
+  #select filtered out array elements that didn't meet our
+  #conditions, while map! retains the elements that fail and then
+  #modify the elements that pass.
