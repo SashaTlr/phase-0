@@ -5,24 +5,27 @@
 # I spent 1 hour on this challenge.
 class NameData
   attr_reader :name
+
   def initialize
-    @name = "Sasha Tailor"
+    @name = "Sasha"
   end
 end
 
 class Greetings
-  def NameData
-    @namedata = NameData.new
+  attr_reader :nameData
+
+  def initialize
+    @nameData = NameData.new
   end
 
   def hello
-    puts "Hello Student! How wonderful to see you today."
+    puts "Hello #{@nameData.name}! How wonderful to see you today."
   end
 end
 
 # Your Code Here:
 
-greet = Greetings.new
+greet = Greetings.new()
 greet.hello # puts "Hello Student! How wonderful to see you today."
 
 
