@@ -4,19 +4,19 @@
 
 // Program Structure
 // Write your own variable and do something to it.
-/*
-var JettsAge = 2
-var JettsAgeNextYear = 2 + 1
 
-console.log(JettsAge)
-console.log(JettsAgeNextYear)
+var JettsAge = 2;
+var JettsAgeNextYear = 2 + 1;
+
+console.log(JettsAge);
+console.log(JettsAgeNextYear);
 
 //Chapter 2
 prompt("What's your favourite food?", "");
 confirm("Hey, that's my favourite food too!");
 // Complete one of the exercises: Looping a Triangle, FizzBuzz, or Chess Board
 // FizzBuzz
-*/
+
 
 // empty strings evaluate to false
 // if div by 3 then return "fizz", div by 5 then return +"buzz"
