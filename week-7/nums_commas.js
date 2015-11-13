@@ -108,10 +108,10 @@ assert(
 //reversed the string, sectioned into 3, and then rejoined and //reversed back to a string. The difference was that in ruby, there //is a built-in method that will loop through and split, while in //JS, we have to create a for loop for each splice.
 
 //What did you learn about iterating over arrays in JavaScript?
-//In Javascript, we have to create a loop to iterate over arrays as there aren't built in array methods that will do this for us.
+//In Javascript, we have to create a loop to iterate over arrays as //there aren't built in array methods that will do this for us.
 
 //What was different about solving this problem in JavaScript?
 //No iterators and to reverse method on strings, only arrays.
 
-//What built-in methods did you find to incorporate in your refactored solution?
+//What built-in methods did you find to incorporate in your //refactored solution?
 //We used .splice, .toString, .split, .reverse, and .join.
