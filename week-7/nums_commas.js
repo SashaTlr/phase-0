@@ -55,14 +55,11 @@ console.log(separateComma(1569743))
 */
 // Refactored Solution
 function separateComma(num) {
-  if (num < 1000) {
-    return num.toString();
-  }
+
   var numArray = num.toString().split('').reverse();
 
-  for (var i = 3; i in numArray; i += 3) {
+  for (var i = 3; i in numArray; i += 4) {
     numArray.splice(i,0,",");
-    i++;
   }
   return numArray.reverse().join('');
 }
@@ -99,4 +96,22 @@ assert(
   "3. "
 )
 
+assert(
+  (separateComma(1569743213) === "1,569,743,213"),
+  "SeparateComma should return 1,569,743,213.",
+  "4. "
+)
 // Reflection
+//What was it like to approach the problem from the perspective of
+//JavaScript? Did you approach the problem differently?
+//We did a similar approach in that we turned an integer to string,
+//reversed the string, sectioned into 3, and then rejoined and //reversed back to a string. The difference was that in ruby, there //is a built-in method that will loop through and split, while in //JS, we have to create a for loop for each splice.
+
+//What did you learn about iterating over arrays in JavaScript?
+//In Javascript, we have to create a loop to iterate over arrays as there aren't built in array methods that will do this for us.
+
+//What was different about solving this problem in JavaScript?
+//No iterators and to reverse method on strings, only arrays.
+
+//What built-in methods did you find to incorporate in your refactored solution?
+//We used .splice, .toString, .split, .reverse, and .join.
