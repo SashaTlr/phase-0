@@ -36,7 +36,7 @@ function stringReverse(string){
 
 var myarray = [1,2,3,4,5,6,7];
 
-var filtered = function(myarray){
+function filtered(myarray){
  function evens(value) {
    return value % 2 == 0;
  }
@@ -61,7 +61,6 @@ console.log(michaelPhelps.constructor === Athlete)
 console.log(michaelPhelps.name + " " + michaelPhelps.sport + " " + michaelPhelps.quote)
 
 // Reflection
-// Function declaration versus function expression
 
 // What JavaScript knowledge did you solidify in this challenge?
 // The last exercise helped to clarify how to build a constructor
@@ -70,6 +69,17 @@ console.log(michaelPhelps.name + " " + michaelPhelps.sport + " " + michaelPhelps
 // concept.
 
 // What are constructor functions?
-// The constructor function is a function object with the prototype property. The prototype and a property called constructor, which is set to the function itself. This means that you can use .this in your property declarations. Constructor functions are preferred when multiple instances of an object will be created and when there will be modifications to the object throughout the program. You also need to instantiate an object if it's a constructor, using new (). Literal notation is preferred if there will only be a single instance of the object.
+// The constructor function is a function object with the prototype property. The prototype and a property called constructor, which is set to the function itself. This means that you can use .this in your property declarations. Constructor functions are preferred when multiple instances of an object will be created and when there will be modifications to the object throughout the program, as it won't affect instances of the object that have already been created. You also need to instantiate an object if it's a constructor, using new (). Literal notation is preferred if there will only be a single instance of the object.
 
 // How are constructors different from Ruby classes (in your research)?
+//In constructors, a prototype function is part of the object's
+//methods. In Ruby classes, the function is not part of the object's
+//methods, but the instance methods. The class itself inherits class
+//methods from its parent class.
+
+//Javascript constructors functions can be invoked to create new objects. Javascript acts as a repository of properties that reference other objects, and these properties can be accessed directly on the object. Ruby objects are hashes of instance variables that reference other objects. In Ruby, the instance variables can only be created or altered within the context of the object using a method call. This is called data encapsulation.
+
+// Function declaration versus function expression
+// A function declaration has function used in the main code flow,
+//and the variable is created pre-execution, so can be called before
+//or after the function is defined. A function expression is part of an expression, and is created once execution reaches it so can only be called after creation. Functional expressions are preferred if it is a conditional function.
