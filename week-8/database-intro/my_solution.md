@@ -57,6 +57,7 @@
 |...|
 
 **5) sqlite> SELECT state_name FROM states WHERE region_id = 7;**
+
 |state_name|
 |----------|
 |Arkansas|
@@ -65,6 +66,7 @@
 |Texas|
 
 **6) sqlite> select state_name, population_density FROM states WHERE population_density > 50 ORDER BY population_density ASC;**
+
 |state_name | population_density|
 |---------- | ------------------|
 |Iowa       | 54.81|
@@ -79,6 +81,7 @@
 |...|
 
 **7) sqlite> SELECT state_name FROM states where population BETWEEN 1000000 AND 1500000;**
+
 |state_name |
 |---------- |
 |Hawaii |
@@ -88,6 +91,7 @@
 |Rhode Isla |
 
 **8) sqlite> SELECT state_name, region_id FROM states ORDER BY region_id ASC;**
+
 |state_name  | region_id|
 |----------- | ----------|
 |Connecticut | 1|
@@ -104,6 +108,7 @@
 |...|
 
 **9) sqlite> SELECT region_name FROM regions WHERE region_name LIKE '%Central%';**
+
 |region_name|
 |------------------|
 |East North Central|
@@ -112,6 +117,7 @@
 |West South Central|
 
 **10) sqlite> SELECT regions.region_name, states.state_name FROM states JOIN regions ON states.region_id = regions.id ORDER BY regions.id ASC;**
+
 |region_name | state_name |
 |----------- | ----------- |
 |New England | Connecticut |
