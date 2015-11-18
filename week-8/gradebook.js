@@ -24,31 +24,87 @@ var scores = [ [80, 70, 70, 100],
 // Write your code below.
 
 
+// var gradebook = {};
+
+// gradebook = {
+//   Joseph: {},
+//   Susan: {},
+//   William: {},
+//   Elizabeth: {}
+// };
 
 
+//  gradebook["Joseph"]["testScores"] = scores[0];
+//  gradebook["Susan"]["testScores"] = scores[1];
+//  gradebook["William"]["testScores"] = scores[2];
+//  gradebook["Elizabeth"]["testScores"] = scores[3];
 
+// gradebook["addScore"] = function (name, scores) {
+//   gradebook[name]["testScores"].push(scores);
+// };
+
+// gradebook["getAverage"] = function(name){
+//   return average(gradebook[name]["testScores"]);
+// } ;
+
+// var average = function(grades) {
+//   var sum = 0;
+//   grades.forEach(function(x) {
+//     sum += x;
+//   });
+//   return sum / grades.length;
+// };
 
 
 
 // __________________________________________
 // Refactored Solution
+var gradebook = {};
 
+for (var i in students){
+  gradebook[students[i]] = {};
+}
 
+for (var i in students){
+  gradebook[students[i]]["testScores"] = scores[i];
+}
 
+gradebook.addScore = function(name, scores) {
+  gradebook[name]["testScores"].push(scores);
+};
 
+gradebook["getAverage"] = function(name){
+  return average(gradebook[name]["testScores"]);
+} ;
 
+var average = function(grades) {
+  var sum = 0;
+  grades.forEach(function(x) {
+    sum += x;
+  });
+  return sum / grades.length;
+};
 
 
 
 // __________________________________________
 // Reflect
+// What did you learn about adding functions to objects?
+//I learned how to use literal notation to add a function. I don't
+//understand why the function fails to add if I create the function
+//using gradebook.prototype.addScore = function(names, scores) {}
+//instead. I feel like I've actually unlearned some of last week...
 
+// How did you iterate over nested arrays in JavaScript?
+// We used for loops, var i in array, and bracket notation to
+//iterate through.
 
-
-
-
-
-
+// Were there any new methods you were able to incorporate? If so,
+//what were they and how did they work?
+// We used forEach, which I hadn't tried before. It works well, it
+// seems like it's just a simpler syntax to writing for i in array
+//when you only need to access the element in the array and not the
+//index.
 
 
 // __________________________________________
