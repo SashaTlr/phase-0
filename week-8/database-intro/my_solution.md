@@ -41,16 +41,17 @@ Delaware    917092
 ...
 
 **4) sqlite> SELECT state_name, population FROM states ORDER BY population DESC;**
-state_name | population
----------- | ----------
-California | 38041430
-Texas      | 26059203
-New York   | 19570261
-Florida    | 19317568
-Illinois   | 12875255
-Pennsylvan | 12763536
-Ohio       | 11544225
-...
+
+|state_name | population|
+|---------- | ----------|
+|California | 38041430|
+|Texas      | 26059203|
+|New York   | 19570261|
+|Florida    | 19317568|
+|Illinois   | 12875255|
+|Pennsylvan | 12763536|
+|Ohio       | 11544225|
+|...|
 
 **5) sqlite> SELECT state_name FROM states WHERE region_id = 7;**
 state_name
