@@ -100,7 +100,7 @@ FOR each position in voteCount
 
 // __________________________________________
 // Initial Solution
-
+/*
 
 for( var names in votes) {
   for (var position in votes[names]) {
@@ -132,7 +132,7 @@ for (var position in voteCount){
 }
 
 console.log(officers);
-
+*/
 // __________________________________________
 // Refactored Solution
 
@@ -149,7 +149,6 @@ for( var names in votes) {
 
   }
 }
-
 
 for (var position in voteCount){
   var maxVotes = 0;
