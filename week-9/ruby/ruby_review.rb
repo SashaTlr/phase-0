@@ -1,3 +1,54 @@
+# Fibonacci Sequence
+#Research
+
+#A number is Fibonacci iff one or both of (5*n2 + 4) or (5*n2 – 4) is a perfect square
+#However, precision in Ruby and square root function makes this difficult
+
+# Pseudocode
+#Create an array with Fibonacci sequence and test if last number is greater or equal to test number
+#Inputs: integer
+#Outputs: boolean
+
+#DEFINE method where first element of array is 0 and second element
+#of array is 1
+  #IF last element of array is equal to 0 or 1 then return TRUE
+
+  #WHILE last element of array is less than Integer
+  #Add an element to end of array that is equal to sum of last two elements
+
+#Return TRUE if new number is equal to Integer or Return FALSE if new number is greater than Integer
+
+
+# Initial Solution#
+
+#def is_fibonacci?(num)
+#fib_sequence = []
+#fib_sequence[0,1] = 0,1
+#  until fib_sequence[-1] >= num do
+#    fib_sequence.push(fib_sequence[-1] + fib_sequence[-2])
+#  end
+#  num == fib_sequence[-1]
+#end
+
+
+
+# Refactored Solution
+
+def is_fibonacci?(num)
+
+fib_sequence = []
+fib_sequence[0,1] = 0,1
+
+  until fib_sequence.last >= num do
+    fib_sequence.push(fib_sequence.last(2).reduce(:+))
+  end
+
+  num == fib_sequence.last
+
+end
+
+
+=begin
 # PezDispenser Class from User Stories
 
 # I worked on this challenge by myself.
@@ -10,21 +61,21 @@
 # Pseudocode
 # Class PezDispenser instantiates an array argument input, with the array containing the list of flavors
 
-# Methods of Class PezDispenser
+# Methods of Class PezDispenser#
 
-DEFINE method pez_count and output integer
-  pez_count returns the length of the flavors array
+#DEFINE method pez_count and output integer
+#  pez_count returns the length of the flavors array#
 
-DEFINE method get_pez and output string
-  POP off first element in flavors array
-  RETURN string flavor that was popped off of array
+#DEFINE method get_pez and output string
+#  POP off first element in flavors array
+#  RETURN string flavor that was popped off of array#
 
-DEFINE add_pez with string input for a flavor
-  SHIFT arrays up one element to create an empty first element
-  ADD string of flavour to first element of flavor array
+#DEFINE add_pez with string input for a flavor
+#  SHIFT arrays up one element to create an empty first element
+#  ADD string of flavour to first element of flavor array#
 
-DEFINE see_all_pez
-  RETURN string of arrays to list flavours in pez
+#DEFINE see_all_pez
+#  RETURN string of arrays to list flavours in pez
 
 # Initial Solution
 
@@ -112,3 +163,5 @@ puts "Now you have #{super_mario.pez_count} pez!"
 #I'm getting confused about objects vs classes in Ruby versus JavaScript, how inheritance works. We've looked at nested objects in JS and now I'm trying to understand if we would have nested classes in Ruby, or if we would use subclasses as a parallel to nested JS objects.
 #What are you going to study to get more prepared for Phase 1?
 #I obviously need to bone up on my understanding of classes, objects, nested objects, etc and the differences between Ruby and JS.
+
+=end
